@@ -19,6 +19,12 @@ import kotlin.math.max
  * }
  */
 class Solution11 {
+
+    class TreeNode(var `val`: Int) {
+        var left: TreeNode? = null
+        var right: TreeNode? = null
+    }
+
     fun diameterOfBinaryTree(root: TreeNode?): Int {
         if (root == null) return 0
 
@@ -58,20 +64,15 @@ class Solution11 {
     }
 }
 
-class TreeNode(var `val`: Int) {
-     var left: TreeNode? = null
-     var right: TreeNode? = null
- }
-
 fun main(args: Array<String>) {
     val sol = Solution11()
-    val node5 = TreeNode(5)
-    val node4 = TreeNode(4)
-    val node2 = TreeNode(2)
+    val node5 = Solution11.TreeNode(5)
+    val node4 = Solution11.TreeNode(4)
+    val node2 = Solution11.TreeNode(2)
     node2.left = node4
     node2.right = node5
-    val node3 = TreeNode(3)
-    val root = TreeNode(1)
+    val node3 = Solution11.TreeNode(3)
+    val root = Solution11.TreeNode(1)
     root.left = node2
     root.right = node3
     println(sol.diameterOfBinaryTree(root))
